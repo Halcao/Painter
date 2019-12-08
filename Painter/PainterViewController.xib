@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PainterViewController" customModule="Painter" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-1R-NMe" userLabel="tool">
+                    <rect key="frame" x="20" y="129" width="43" height="220"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-q8-RSl">
+                            <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
+                            <state key="normal" title="undo"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-mZ-1TB">
+                            <rect key="frame" x="0.0" y="38" width="43" height="30"/>
+                            <state key="normal" title="redo"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-89-e14">
+                            <rect key="frame" x="0.0" y="76" width="43" height="30"/>
+                            <state key="normal" title="clear"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-dp-HiO">
+                            <rect key="frame" x="0.0" y="114" width="43" height="30"/>
+                            <state key="normal" title="stack"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psc-As-7tr">
+                            <rect key="frame" x="0.0" y="152" width="43" height="30"/>
+                            <state key="normal" title="add"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-0C-Twy">
+                            <rect key="frame" x="0.0" y="190" width="43" height="30"/>
+                            <state key="normal" title="status"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="MCh-HL-Qxw"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-wm-lo3" userLabel="size">
+                    <rect key="frame" x="154" y="832" width="106" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GK-dw-zbN">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="s1"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxS-i5-mfp">
+                            <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="s2"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gew-5O-smX">
+                            <rect key="frame" x="76" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="s3"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="D04-So-AH4"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KNU-Mg-9Ic" userLabel="color">
+                    <rect key="frame" x="20" y="832" width="106" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0N-Nv-r4g">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="c1"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y36-q7-e80">
+                            <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="c2"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee3-Yd-AiH">
+                            <rect key="frame" x="76" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="c3"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="6SH-Fs-5EN"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTC-hq-wIQ" userLabel="functional">
+                    <rect key="frame" x="314" y="832" width="80" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-k2-yej">
+                            <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                            <state key="normal" title="save"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpR-p8-ucb">
+                            <rect key="frame" x="40" y="0.0" width="40" height="30"/>
+                            <state key="normal" title="about"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="4rk-cw-1ap"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xTC-hq-wIQ" firstAttribute="centerY" secondItem="KNU-Mg-9Ic" secondAttribute="centerY" id="39F-Tu-N7m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xTC-hq-wIQ" secondAttribute="trailing" constant="20" id="Obr-iS-OUF"/>
+                <constraint firstItem="UK3-1R-NMe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="85" id="QjT-Cv-k6g"/>
+                <constraint firstItem="KNU-Mg-9Ic" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R5L-zn-tsw"/>
+                <constraint firstItem="pAi-wm-lo3" firstAttribute="leading" secondItem="KNU-Mg-9Ic" secondAttribute="trailing" constant="28" id="d9h-r0-vSd"/>
+                <constraint firstItem="pAi-wm-lo3" firstAttribute="centerY" secondItem="KNU-Mg-9Ic" secondAttribute="centerY" id="i8P-jp-5ON"/>
+                <constraint firstItem="UK3-1R-NMe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iGT-vz-xWB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KNU-Mg-9Ic" secondAttribute="bottom" id="mPi-mb-aUe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

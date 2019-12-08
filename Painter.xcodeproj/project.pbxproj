@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360BB8C9239AA14E00BD4946 /* AppDelegate.swift */; };
+		360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360BB8CB239AA14E00BD4946 /* ViewController.swift */; };
+		360BB8CF239AA14E00BD4946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8CD239AA14E00BD4946 /* Main.storyboard */; };
+		360BB8D1239AA15200BD4946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D0239AA15200BD4946 /* Assets.xcassets */; };
+		360BB8D4239AA15200BD4946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */; };
+		36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F869239CF0F200C4EB58 /* PainterViewController.swift */; };
+		36A8F86C239CF0F200C4EB58 /* PainterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */; };
+		36A8F86E239D2D4500C4EB58 /* DrawingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */; };
+		D7D99EA52916364167DC7BDB /* Pods_Painter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5708EF03A42A503F4F19D6C3 /* Pods_Painter.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		360BB8C6239AA14E00BD4946 /* Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		360BB8C9239AA14E00BD4946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		360BB8CB239AA14E00BD4946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		360BB8CE239AA14E00BD4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		360BB8D0239AA15200BD4946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		360BB8D3239AA15200BD4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		360BB8D5239AA15200BD4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A8F869239CF0F200C4EB58 /* PainterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterViewController.swift; sourceTree = "<group>"; };
+		36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PainterViewController.xib; sourceTree = "<group>"; };
+		36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingMode.swift; sourceTree = "<group>"; };
+		47C58D4811DE1EA885872E69 /* Pods-Painter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Painter.release.xcconfig"; path = "Target Support Files/Pods-Painter/Pods-Painter.release.xcconfig"; sourceTree = "<group>"; };
+		5708EF03A42A503F4F19D6C3 /* Pods_Painter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Painter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		573280C444976339349BF105 /* Pods-Painter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Painter.debug.xcconfig"; path = "Target Support Files/Pods-Painter/Pods-Painter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		360BB8C3239AA14E00BD4946 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7D99EA52916364167DC7BDB /* Pods_Painter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		360BB8BD239AA14E00BD4946 = {
+			isa = PBXGroup;
+			children = (
+				360BB8C8239AA14E00BD4946 /* Painter */,
+				360BB8C7239AA14E00BD4946 /* Products */,
+				B7A424AC8864E049519E8D05 /* Pods */,
+				6BDC4FBCBB73374F2A763F95 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		360BB8C7239AA14E00BD4946 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				360BB8C6239AA14E00BD4946 /* Painter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		360BB8C8239AA14E00BD4946 /* Painter */ = {
+			isa = PBXGroup;
+			children = (
+				360BB8C9239AA14E00BD4946 /* AppDelegate.swift */,
+				360BB8CB239AA14E00BD4946 /* ViewController.swift */,
+				36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */,
+				36A8F869239CF0F200C4EB58 /* PainterViewController.swift */,
+				36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */,
+				360BB8CD239AA14E00BD4946 /* Main.storyboard */,
+				360BB8D0239AA15200BD4946 /* Assets.xcassets */,
+				360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */,
+				360BB8D5239AA15200BD4946 /* Info.plist */,
+			);
+			path = Painter;
+			sourceTree = "<group>";
+		};
+		6BDC4FBCBB73374F2A763F95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5708EF03A42A503F4F19D6C3 /* Pods_Painter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7A424AC8864E049519E8D05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				573280C444976339349BF105 /* Pods-Painter.debug.xcconfig */,
+				47C58D4811DE1EA885872E69 /* Pods-Painter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		360BB8C5239AA14E00BD4946 /* Painter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 360BB8D8239AA15200BD4946 /* Build configuration list for PBXNativeTarget "Painter" */;
+			buildPhases = (
+				683B72F58D700179197735AC /* [CP] Check Pods Manifest.lock */,
+				360BB8C2239AA14E00BD4946 /* Sources */,
+				360BB8C3239AA14E00BD4946 /* Frameworks */,
+				360BB8C4239AA14E00BD4946 /* Resources */,
+				CA63F1173BB5B7BFCA6C7490 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Painter;
+			productName = Painter;
+			productReference = 360BB8C6239AA14E00BD4946 /* Painter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		360BB8BE239AA14E00BD4946 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = twtstudio;
+				TargetAttributes = {
+					360BB8C5239AA14E00BD4946 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 360BB8C1239AA14E00BD4946 /* Build configuration list for PBXProject "Painter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 360BB8BD239AA14E00BD4946;
+			productRefGroup = 360BB8C7239AA14E00BD4946 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				360BB8C5239AA14E00BD4946 /* Painter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		360BB8C4239AA14E00BD4946 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A8F86C239CF0F200C4EB58 /* PainterViewController.xib in Resources */,
+				360BB8D4239AA15200BD4946 /* LaunchScreen.storyboard in Resources */,
+				360BB8D1239AA15200BD4946 /* Assets.xcassets in Resources */,
+				360BB8CF239AA14E00BD4946 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		683B72F58D700179197735AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Painter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA63F1173BB5B7BFCA6C7490 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Painter/Pods-Painter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Painter/Pods-Painter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Painter/Pods-Painter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		360BB8C2239AA14E00BD4946 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */,
+				36A8F86E239D2D4500C4EB58 /* DrawingMode.swift in Sources */,
+				360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */,
+				36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		360BB8CD239AA14E00BD4946 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360BB8CE239AA14E00BD4946 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360BB8D3239AA15200BD4946 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		360BB8D6239AA15200BD4946 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		360BB8D7239AA15200BD4946 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		360BB8D9239AA15200BD4946 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573280C444976339349BF105 /* Pods-Painter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				INFOPLIST_FILE = Painter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.twtstudio.Painter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		360BB8DA239AA15200BD4946 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47C58D4811DE1EA885872E69 /* Pods-Painter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				INFOPLIST_FILE = Painter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.twtstudio.Painter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		360BB8C1239AA14E00BD4946 /* Build configuration list for PBXProject "Painter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360BB8D6239AA15200BD4946 /* Debug */,
+				360BB8D7239AA15200BD4946 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		360BB8D8239AA15200BD4946 /* Build configuration list for PBXNativeTarget "Painter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360BB8D9239AA15200BD4946 /* Debug */,
+				360BB8DA239AA15200BD4946 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 360BB8BE239AA14E00BD4946 /* Project object */;
+}
