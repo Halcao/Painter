@@ -14,7 +14,8 @@
 		360BB8D4239AA15200BD4946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */; };
 		36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F869239CF0F200C4EB58 /* PainterViewController.swift */; };
 		36A8F86C239CF0F200C4EB58 /* PainterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */; };
-		36A8F86E239D2D4500C4EB58 /* DrawingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */; };
+		36A8F86E239D2D4500C4EB58 /* DrawingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */; };
+		36A8F870239D3B8400C4EB58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F86F239D3B8400C4EB58 /* Extensions.swift */; };
 		D7D99EA52916364167DC7BDB /* Pods_Painter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5708EF03A42A503F4F19D6C3 /* Pods_Painter.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +29,8 @@
 		360BB8D5239AA15200BD4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A8F869239CF0F200C4EB58 /* PainterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterViewController.swift; sourceTree = "<group>"; };
 		36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PainterViewController.xib; sourceTree = "<group>"; };
-		36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingMode.swift; sourceTree = "<group>"; };
+		36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModels.swift; sourceTree = "<group>"; };
+		36A8F86F239D3B8400C4EB58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		47C58D4811DE1EA885872E69 /* Pods-Painter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Painter.release.xcconfig"; path = "Target Support Files/Pods-Painter/Pods-Painter.release.xcconfig"; sourceTree = "<group>"; };
 		5708EF03A42A503F4F19D6C3 /* Pods_Painter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Painter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573280C444976339349BF105 /* Pods-Painter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Painter.debug.xcconfig"; path = "Target Support Files/Pods-Painter/Pods-Painter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,8 +71,9 @@
 			children = (
 				360BB8C9239AA14E00BD4946 /* AppDelegate.swift */,
 				360BB8CB239AA14E00BD4946 /* ViewController.swift */,
-				36A8F86D239D2D4500C4EB58 /* DrawingMode.swift */,
+				36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */,
 				36A8F869239CF0F200C4EB58 /* PainterViewController.swift */,
+				36A8F86F239D3B8400C4EB58 /* Extensions.swift */,
 				36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */,
 				360BB8CD239AA14E00BD4946 /* Main.storyboard */,
 				360BB8D0239AA15200BD4946 /* Assets.xcassets */,
@@ -213,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A8F870239D3B8400C4EB58 /* Extensions.swift in Sources */,
 				360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */,
-				36A8F86E239D2D4500C4EB58 /* DrawingMode.swift in Sources */,
+				36A8F86E239D2D4500C4EB58 /* DrawingModels.swift in Sources */,
 				360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */,
 				36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */,
 			);

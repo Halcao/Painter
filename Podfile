@@ -7,5 +7,5 @@ target 'Painter' do
 
   # Pods for Painter
 	pod "Color-Picker-for-iOS", "~> 2.0"
-
+	pod 'RLBAlertsPickers', :git => 'https://github.com/loicgriffie/Alerts-Pickers.git', :branch => 'master'
 end

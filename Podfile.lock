@@ -1,16 +1,29 @@
 PODS:
   - Color-Picker-for-iOS (2.0.2)
+  - RLBAlertsPickers (1.1.1)
 
 DEPENDENCIES:
   - Color-Picker-for-iOS (~> 2.0)
+  - RLBAlertsPickers (from `https://github.com/loicgriffie/Alerts-Pickers.git`, branch `master`)
 
 SPEC REPOS:
   trunk:
     - Color-Picker-for-iOS
 
+EXTERNAL SOURCES:
+  RLBAlertsPickers:
+    :branch: master
+    :git: https://github.com/loicgriffie/Alerts-Pickers.git
+
+CHECKOUT OPTIONS:
+  RLBAlertsPickers:
+    :commit: 5ce7637f4c8d5118442f1a9ae781020fa80fccb9
+    :git: https://github.com/loicgriffie/Alerts-Pickers.git
+
 SPEC CHECKSUMS:
   Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
+  RLBAlertsPickers: 41c85adf62bf535988e31a722c2ff8b13262d9b3
 
-PODFILE CHECKSUM: 73ec8e8b79ad2feffc5dc4e88ff25fe12ea1659d
+PODFILE CHECKSUM: 7ecf22762f51e54fd5d932a4496545b6b0dc32ca
 
 COCOAPODS: 1.8.0.beta.2

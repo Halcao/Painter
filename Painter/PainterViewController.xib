@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PainterViewController" customModule="Painter" customModuleProvider="target">
             <connections>
+                <outlet property="redoButton" destination="AZh-mZ-1TB" id="RTY-Kk-elS"/>
+                <outlet property="statusButton" destination="G0P-0C-Twy" id="rCX-MH-O5J"/>
+                <outlet property="undoButton" destination="vm8-q8-RSl" id="05w-uE-Wyj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,22 +29,37 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-q8-RSl">
                             <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
                             <state key="normal" title="undo"/>
+                            <connections>
+                                <action selector="undo:" destination="-1" eventType="touchUpInside" id="Pot-Sm-zm9"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-mZ-1TB">
                             <rect key="frame" x="0.0" y="38" width="43" height="30"/>
                             <state key="normal" title="redo"/>
+                            <connections>
+                                <action selector="redo:" destination="-1" eventType="touchUpInside" id="lWm-GH-8gx"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-89-e14">
                             <rect key="frame" x="0.0" y="76" width="43" height="30"/>
                             <state key="normal" title="clear"/>
+                            <connections>
+                                <action selector="clear:" destination="-1" eventType="touchUpInside" id="E80-rP-OlZ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-dp-HiO">
                             <rect key="frame" x="0.0" y="114" width="43" height="30"/>
                             <state key="normal" title="stack"/>
+                            <connections>
+                                <action selector="manage:" destination="-1" eventType="touchUpInside" id="wA1-uH-drR"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psc-As-7tr">
                             <rect key="frame" x="0.0" y="152" width="43" height="30"/>
                             <state key="normal" title="add"/>
+                            <connections>
+                                <action selector="switchMode:" destination="-1" eventType="touchUpInside" id="l1n-ih-N0U"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-0C-Twy">
                             <rect key="frame" x="0.0" y="190" width="43" height="30"/>
@@ -87,14 +105,24 @@
                     <viewLayoutGuide key="safeArea" id="6SH-Fs-5EN"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTC-hq-wIQ" userLabel="functional">
-                    <rect key="frame" x="314" y="832" width="80" height="30"/>
+                    <rect key="frame" x="276" y="832" width="118" height="30"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8i-HV-iho" userLabel="load">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="load"/>
+                            <connections>
+                                <action selector="load:" destination="-1" eventType="touchUpInside" id="bmb-Lp-b8k"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-k2-yej">
-                            <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                            <rect key="frame" x="38" y="0.0" width="32" height="30"/>
                             <state key="normal" title="save"/>
+                            <connections>
+                                <action selector="save:" destination="-1" eventType="touchUpInside" id="RnS-gT-yRi"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpR-p8-ucb">
-                            <rect key="frame" x="40" y="0.0" width="40" height="30"/>
+                            <rect key="frame" x="78" y="0.0" width="40" height="30"/>
                             <state key="normal" title="about"/>
                         </button>
                     </subviews>
