@@ -22,6 +22,11 @@ class PainterViewController: UIViewController {
     private var drawingMode: DrawingMode = .triangle {
         didSet {
             // 切换 statusButton
+            if drawingMode == .triangle {
+                statusButton.setImage(UIImage(named: "triangle"), for: .normal)
+            } else {
+                statusButton.setImage(UIImage(named: "line"), for: .normal)
+            }
         }
     }
 
@@ -37,6 +42,11 @@ class PainterViewController: UIViewController {
 
     private func setup() {
         updateRedoButtons()
+
+        statusButton.addDashedBorder()
+        statusButton.transform = CGAffineTransform(scaleX: 26.0/30, y: 26.0/30)
+        statusButton.isUserInteractionEnabled = false
+        self.drawingMode = .line
     }
 
     @IBAction func load(_ sender: Any) {
@@ -106,11 +116,25 @@ class PainterViewController: UIViewController {
     }
 
     @IBAction func manage(_ sender: Any) {
+
     }
 
     @IBAction func switchMode(_ sender: Any) {
+        let alert = UIAlertController(style: .alert, title: "模式选择", message: "请选择模式")
+        let line = UIAlertAction(title: "线段", style: .default) { action in
+            self.drawingMode = .line
+        }
+        let triangle = UIAlertAction(title: "三角形", style: .default) { action in
+            self.drawingMode = .triangle
+        }
+        alert.addAction(line)
+        alert.addAction(triangle)
+        alert.show()
     }
 
+    private func line() {
+
+    }
 
     private func colorPick(current: UIColor) {
         let alert = UIAlertController(style: .actionSheet)

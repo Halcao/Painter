@@ -24,48 +24,65 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-1R-NMe" userLabel="tool">
-                    <rect key="frame" x="20" y="129" width="43" height="220"/>
+                    <rect key="frame" x="20" y="129" width="30" height="220"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-q8-RSl">
-                            <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
-                            <state key="normal" title="undo"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-q8-RSl">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="height" multiplier="1:1" id="QBk-So-us9"/>
+                                <constraint firstAttribute="width" constant="30" id="liH-MX-60i"/>
+                            </constraints>
+                            <state key="normal" title="undo" image="undo"/>
                             <connections>
                                 <action selector="undo:" destination="-1" eventType="touchUpInside" id="Pot-Sm-zm9"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-mZ-1TB">
-                            <rect key="frame" x="0.0" y="38" width="43" height="30"/>
-                            <state key="normal" title="redo"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-mZ-1TB">
+                            <rect key="frame" x="0.0" y="38" width="30" height="30"/>
+                            <state key="normal" title="redo" image="redo"/>
                             <connections>
                                 <action selector="redo:" destination="-1" eventType="touchUpInside" id="lWm-GH-8gx"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-89-e14">
-                            <rect key="frame" x="0.0" y="76" width="43" height="30"/>
-                            <state key="normal" title="clear"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-89-e14">
+                            <rect key="frame" x="0.0" y="76" width="30" height="30"/>
+                            <state key="normal" title="clear" image="icon_clear"/>
+                            <state key="highlighted" image="icon_clear_press"/>
                             <connections>
                                 <action selector="clear:" destination="-1" eventType="touchUpInside" id="E80-rP-OlZ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-dp-HiO">
-                            <rect key="frame" x="0.0" y="114" width="43" height="30"/>
-                            <state key="normal" title="stack"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-dp-HiO">
+                            <rect key="frame" x="0.0" y="114" width="30" height="30"/>
+                            <state key="normal" title="stack" image="icon_shedingditu"/>
                             <connections>
                                 <action selector="manage:" destination="-1" eventType="touchUpInside" id="wA1-uH-drR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psc-As-7tr">
-                            <rect key="frame" x="0.0" y="152" width="43" height="30"/>
-                            <state key="normal" title="add"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psc-As-7tr">
+                            <rect key="frame" x="0.0" y="152" width="30" height="30"/>
+                            <state key="normal" title="add" image="icon_add"/>
                             <connections>
                                 <action selector="switchMode:" destination="-1" eventType="touchUpInside" id="l1n-ih-N0U"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-0C-Twy">
-                            <rect key="frame" x="0.0" y="190" width="43" height="30"/>
-                            <state key="normal" title="status"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-0C-Twy">
+                            <rect key="frame" x="0.0" y="190" width="30" height="30"/>
+                            <state key="normal" title="status" image="line"/>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="AZh-mZ-1TB" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="7aA-sq-aBN"/>
+                        <constraint firstItem="7Nq-89-e14" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="EhX-Mk-IcB"/>
+                        <constraint firstItem="psc-As-7tr" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="Et0-1m-FV2"/>
+                        <constraint firstItem="AZh-mZ-1TB" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="HeR-TB-puh"/>
+                        <constraint firstItem="psc-As-7tr" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="SK0-ks-HIB"/>
+                        <constraint firstItem="7Nq-89-e14" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="YTE-m3-jFh"/>
+                        <constraint firstItem="G0P-0C-Twy" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="eYQ-xu-jTB"/>
+                        <constraint firstItem="CFn-dp-HiO" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="h4Y-aT-LMQ"/>
+                        <constraint firstItem="G0P-0C-Twy" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="j2K-3r-XqH"/>
+                        <constraint firstItem="CFn-dp-HiO" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="s9R-Z3-TCv"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="MCh-HL-Qxw"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-wm-lo3" userLabel="size">
@@ -143,4 +160,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_add" width="100" height="100"/>
+        <image name="icon_clear" width="80" height="80"/>
+        <image name="icon_clear_press" width="80" height="80"/>
+        <image name="icon_shedingditu" width="140" height="100"/>
+        <image name="line" width="100" height="100"/>
+        <image name="redo" width="100" height="100"/>
+        <image name="undo" width="100" height="100"/>
+    </resources>
 </document>
