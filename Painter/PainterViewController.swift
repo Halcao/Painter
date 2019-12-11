@@ -126,7 +126,7 @@ class PainterViewController: UIViewController {
 //        let string = String(data: json, encoding: .utf8)
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-DD hh:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let filename =  formatter.string(from: Date()) + ".json"
 
         let document = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(filename)
@@ -284,10 +284,12 @@ class PainterViewController: UIViewController {
             })
         }
 
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(line)
         alert.addAction(triangle)
         alert.addAction(inputLine)
         alert.addAction(input3)
+        alert.addAction(cancel)
         alert.show()
     }
 

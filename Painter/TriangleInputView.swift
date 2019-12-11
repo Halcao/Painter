@@ -161,7 +161,7 @@ extension TriangleInputView {
         config.presentationStyle = .center
         config.duration = .forever
         config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
-        config.presentationContext  = .window(windowLevel: UIWindow.Level.normal)
-        SwiftMessages.show(config: config, view: self)
+        // config.presentationContext  = .view()
+        SwiftMessages.otherMessages.show(config: config, view: self)
     }
 }

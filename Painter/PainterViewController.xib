@@ -52,15 +52,14 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nq-89-e14">
                             <rect key="frame" x="0.0" y="76" width="30" height="30"/>
-                            <state key="normal" title="clear" image="icon_clear"/>
-                            <state key="highlighted" image="icon_clear_press"/>
+                            <state key="normal" title="clear" image="trash"/>
                             <connections>
                                 <action selector="clear:" destination="-1" eventType="touchUpInside" id="E80-rP-OlZ"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-dp-HiO">
                             <rect key="frame" x="0.0" y="114" width="30" height="30"/>
-                            <state key="normal" title="stack" image="icon_shedingditu"/>
+                            <state key="normal" title="stack" image="file-manager"/>
                             <connections>
                                 <action selector="manage:" destination="-1" eventType="touchUpInside" id="wA1-uH-drR"/>
                             </connections>
@@ -116,7 +115,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="gew-5O-smX" firstAttribute="width" secondItem="1GK-dw-zbN" secondAttribute="width" id="FMq-Oy-3Js"/>
-                        <constraint firstItem="gew-5O-smX" firstAttribute="height" secondItem="1GK-dw-zbN" secondAttribute="height" id="aEa-Gb-YFg"/>
+                        <constraint firstItem="gew-5O-smX" firstAttribute="height" secondItem="1GK-dw-zbN" secondAttribute="height" multiplier="1:1" id="aEa-Gb-YFg"/>
                         <constraint firstItem="lxS-i5-mfp" firstAttribute="width" secondItem="1GK-dw-zbN" secondAttribute="width" id="waZ-qt-yo3"/>
                         <constraint firstItem="lxS-i5-mfp" firstAttribute="height" secondItem="1GK-dw-zbN" secondAttribute="height" id="y99-N3-9jJ"/>
                     </constraints>
@@ -157,27 +156,31 @@
                     <viewLayoutGuide key="safeArea" id="6SH-Fs-5EN"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTC-hq-wIQ" userLabel="functional">
-                    <rect key="frame" x="276" y="825" width="118" height="30"/>
+                    <rect key="frame" x="326" y="825" width="68" height="30"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8i-HV-iho" userLabel="load">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8i-HV-iho" userLabel="load">
                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                            <state key="normal" title="load"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="FKh-Pe-SsW"/>
+                                <constraint firstAttribute="width" secondItem="i8i-HV-iho" secondAttribute="height" multiplier="1:1" id="NQg-Yc-1Ti"/>
+                            </constraints>
+                            <state key="normal" title="load" image="import"/>
                             <connections>
                                 <action selector="load:" destination="-1" eventType="touchUpInside" id="bmb-Lp-b8k"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-k2-yej">
-                            <rect key="frame" x="38" y="0.0" width="32" height="30"/>
-                            <state key="normal" title="save"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiW-k2-yej">
+                            <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="save" image="save"/>
                             <connections>
                                 <action selector="save:" destination="-1" eventType="touchUpInside" id="RnS-gT-yRi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpR-p8-ucb">
-                            <rect key="frame" x="78" y="0.0" width="40" height="30"/>
-                            <state key="normal" title="about"/>
-                        </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="kiW-k2-yej" firstAttribute="width" secondItem="i8i-HV-iho" secondAttribute="width" id="eD9-mY-PvZ"/>
+                        <constraint firstItem="kiW-k2-yej" firstAttribute="height" secondItem="i8i-HV-iho" secondAttribute="height" id="fKj-KN-eLh"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="4rk-cw-1ap"/>
                 </stackView>
             </subviews>
@@ -198,18 +201,19 @@
     <resources>
         <image name="bi_gai" width="90" height="160"/>
         <image name="bi_jian" width="90" height="180"/>
+        <image name="file-manager" width="100" height="100"/>
         <image name="icon_add" width="100" height="100"/>
-        <image name="icon_clear" width="80" height="80"/>
-        <image name="icon_clear_press" width="80" height="80"/>
         <image name="icon_daxiao1" width="80" height="80"/>
         <image name="icon_daxiao1_xuan" width="80" height="80"/>
         <image name="icon_daxiao2" width="80" height="80"/>
         <image name="icon_daxiao2_xuan" width="80" height="80"/>
         <image name="icon_daxiao3" width="80" height="80"/>
         <image name="icon_daxiao3_xuan" width="80" height="80"/>
-        <image name="icon_shedingditu" width="140" height="100"/>
+        <image name="import" width="100" height="100"/>
         <image name="line" width="100" height="100"/>
         <image name="redo" width="100" height="100"/>
+        <image name="save" width="100" height="100"/>
+        <image name="trash" width="100" height="100"/>
         <image name="undo" width="100" height="100"/>
     </resources>
 </document>

@@ -254,6 +254,8 @@ extension CAShapeLayer {
 }
 
 extension SwiftMessages {
+    static var otherMessages = SwiftMessages()
+
     static func showInfoMessage(title: String = "", body: String, context: PresentationContext = .automatic, layout: MessageView.Layout = .cardView) {
         message(title: title, body: body, theme: .info, context: context, layout: layout)
     }
@@ -291,7 +293,7 @@ extension SwiftMessages {
         SwiftMessages.show(config: config, view: view)
     }
 
-    static var otherMessages = SwiftMessages()
+//    static var otherMessages = SwiftMessages()
 
     static func showLoading() {
         //        var newMessage = SwiftMessages()
