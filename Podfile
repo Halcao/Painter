@@ -6,6 +6,9 @@ target 'Painter' do
   use_frameworks!
 
   # Pods for Painter
+	pod 'FlexColorPicker'
 	pod "Color-Picker-for-iOS", "~> 2.0"
+	pod 'SnapKit'
+	pod 'SwiftMessages', "~> 6.0"
 	pod 'RLBAlertsPickers', :git => 'https://github.com/loicgriffie/Alerts-Pickers.git', :branch => 'master'
 end

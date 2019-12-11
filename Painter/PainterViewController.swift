@@ -9,6 +9,8 @@
 import UIKit
 import Color_Picker_for_iOS
 import RLBAlertsPickers
+import SwiftMessages
+import FlexColorPicker
 
 class PainterViewController: UIViewController {
     private var startPoint: CGPoint?
@@ -34,6 +36,37 @@ class PainterViewController: UIViewController {
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var statusButton: UIButton!
 
+    @IBOutlet weak var size1Button: UIButton!
+    @IBOutlet weak var size2Button: UIButton!
+    @IBOutlet weak var size3Button: UIButton!
+
+    @IBOutlet weak var color1Button: UIButton!
+    @IBOutlet weak var color2Button: UIButton!
+    @IBOutlet weak var color3Button: UIButton!
+
+    private var colorButtons: [UIButton] = []
+    private var sizeButtons: [UIButton] = []
+    private var currentColor: Int = 0 {
+        didSet {
+            if currentColor >= 0 && currentColor < 3 {
+                colorButtons[oldValue].isSelected = false
+                colorButtons[currentColor].isSelected = true
+                DrawingConfig.shared.selectedColor = currentColor
+            }
+        }
+    }
+
+    private var currentSize: Int = 0 {
+        didSet {
+            if currentSize >= 0 && currentSize < 3 {
+                sizeButtons[oldValue].isSelected = false
+                sizeButtons[currentSize].isSelected = true
+                DrawingConfig.shared.selectedSize = currentSize
+            }
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,12 +80,92 @@ class PainterViewController: UIViewController {
         statusButton.transform = CGAffineTransform(scaleX: 26.0/30, y: 26.0/30)
         statusButton.isUserInteractionEnabled = false
         self.drawingMode = .line
+
+        sizeButtons = [size1Button, size2Button, size3Button]
+        colorButtons = [color1Button, color2Button, color3Button]
+        size1Button.isSelected = true
+        color1Button.isSelected = true
+
+        for i in 0..<colorButtons.count {
+            colorButtons[i].setColor(color: DrawingConfig.shared.colors[i])
+            colorButtons[i].tag = i
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(colorTapped(tap:)))
+            singleTap.numberOfTapsRequired = 1
+            colorButtons[i].addGestureRecognizer(singleTap)
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(colorTapped(tap:)))
+            doubleTap.numberOfTapsRequired = 2
+            colorButtons[i].addGestureRecognizer(doubleTap)
+            singleTap.require(toFail: doubleTap)
+        }
+
+        for i in 0..<sizeButtons.count {
+            sizeButtons[i].tag = i
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(sizeTapped(tap:)))
+            singleTap.numberOfTapsRequired = 1
+            sizeButtons[i].addGestureRecognizer(singleTap)
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(sizeTapped(tap:)))
+            doubleTap.numberOfTapsRequired = 2
+            sizeButtons[i].addGestureRecognizer(doubleTap)
+            singleTap.require(toFail: doubleTap)
+        }
     }
 
     @IBAction func load(_ sender: Any) {
+        let vc = UIDocumentPickerViewController(documentTypes: ["public.content","public.text","public.source-code"], in: UIDocumentPickerMode.open)
+        vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.allowsMultipleSelection = false
+        self.present(vc, animated: true, completion: nil)
     }
 
     @IBAction func save(_ sender: Any) {
+        var dict = [[String:Any]]()
+        for layer in self.layers {
+            dict.append(layer.encode())
+        }
+        guard let json = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) else {
+            return
+        }
+
+//        let string = String(data: json, encoding: .utf8)
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-DD hh:mm:ss"
+        let filename =  formatter.string(from: Date()) + ".json"
+
+        let document = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(filename)
+        //创建文件
+        FileManager.default.createFile(atPath: document.path, contents: json, attributes: nil)
+
+        let items = [document] as [Any]
+        let activityVC = UIActivityViewController(
+            activityItems: items,
+            applicationActivities: nil)
+
+        activityVC.completionWithItemsHandler =  { activity, success, items, error in
+            // 分享完毕
+            if success {
+                SwiftMessages.showSuccessMessage(body: "保存成功")
+            }
+        }
+        self.present(activityVC, animated: true, completion: nil)
+    }
+
+    @objc func colorTapped(tap: UITapGestureRecognizer) {
+        let index = tap.view?.tag ?? 0
+        if tap.numberOfTapsRequired == 1 {
+            currentColor = index
+        } else if tap.numberOfTapsRequired == 2 {
+            colorPick(index: index)
+        }
+    }
+
+    @objc func sizeTapped(tap: UITapGestureRecognizer) {
+        if tap.numberOfTapsRequired == 1 {
+            currentSize = tap.view?.tag ?? 0
+        } else if tap.numberOfTapsRequired == 2 {
+
+        }
     }
 
     @objc func registerUndo(layer: CAShapeLayer) {
@@ -136,13 +249,21 @@ class PainterViewController: UIViewController {
 
     }
 
-    private func colorPick(current: UIColor) {
-        let alert = UIAlertController(style: .actionSheet)
-        alert.addColorPicker(color: .red) { color in
-            // action with selected color
-        }
-        alert.addAction(title: "Done", style: .cancel)
-        alert.show()
+    private func colorPick(index: Int) {
+        let vc = DefaultColorPickerViewController()
+        vc.delegate = self
+        vc.selectedColor = DrawingConfig.shared.colors[index]
+        self.currentColor = index
+        vc.modalPresentationStyle = .currentContext
+        self.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+//        let alert = UIAlertController(style: .actionSheet)
+//
+//        alert.addColorPicker(color: DrawingConfig.shared.colors[index]) { color in
+//            DrawingConfig.shared.colors[index] = color
+//            self.currentColor = index
+//        }
+//        alert.addAction(title: "完成", style: .cancel)
+//        alert.show()
     }
 }
 
@@ -267,5 +388,45 @@ extension PainterViewController {
             startPoint = nil
             currentLayer = nil
         }
+    }
+}
+
+extension PainterViewController: UIDocumentPickerDelegate {
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let first = urls.first, first.startAccessingSecurityScopedResource() else {
+            return
+        }
+        guard let data = try? Data(contentsOf: first),
+            let array = try? JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0)) as? [[String: Any]] else {
+                return
+        }
+        first.stopAccessingSecurityScopedResource()
+
+        // TODO: 是否保存？
+        let layers = array.map { dict in
+            return CAShapeLayer(dict: dict)
+        }
+
+        self.layers.forEach { layer in
+            if layer.superlayer != nil {
+                layer.removeFromSuperlayer()
+            }
+        }
+        self.layers = layers
+        for layer in layers {
+            self.view.layer.addSublayer(layer)
+        }
+    }
+}
+
+extension PainterViewController: ColorPickerDelegate {
+    func colorPicker(_ colorPicker: ColorPickerController, selectedColor: UIColor, usingControl: ColorControl) {
+
+    }
+
+    func colorPicker(_ colorPicker: ColorPickerController, confirmedColor: UIColor, usingControl: ColorControl) {
+        let index = currentColor
+        DrawingConfig.shared.colors[index] = confirmedColor
+        self.currentColor = index
     }
 }

@@ -1,14 +1,25 @@
 PODS:
   - Color-Picker-for-iOS (2.0.2)
+  - FlexColorPicker (1.3.1)
   - RLBAlertsPickers (1.1.1)
+  - SnapKit (5.0.1)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
 
 DEPENDENCIES:
   - Color-Picker-for-iOS (~> 2.0)
+  - FlexColorPicker
   - RLBAlertsPickers (from `https://github.com/loicgriffie/Alerts-Pickers.git`, branch `master`)
+  - SnapKit
+  - SwiftMessages (~> 6.0)
 
 SPEC REPOS:
   trunk:
     - Color-Picker-for-iOS
+    - FlexColorPicker
+    - SnapKit
+    - SwiftMessages
 
 EXTERNAL SOURCES:
   RLBAlertsPickers:
@@ -22,8 +33,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
+  FlexColorPicker: e627af3d744786378ae65e53214528cc31105921
   RLBAlertsPickers: 41c85adf62bf535988e31a722c2ff8b13262d9b3
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
 
-PODFILE CHECKSUM: 7ecf22762f51e54fd5d932a4496545b6b0dc32ca
+PODFILE CHECKSUM: 5421860b8d1b214a61eb9b5c99204036b73d2375
 
 COCOAPODS: 1.8.0.beta.2

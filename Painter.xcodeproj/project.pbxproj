@@ -12,6 +12,9 @@
 		360BB8CF239AA14E00BD4946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8CD239AA14E00BD4946 /* Main.storyboard */; };
 		360BB8D1239AA15200BD4946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D0239AA15200BD4946 /* Assets.xcassets */; };
 		360BB8D4239AA15200BD4946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */; };
+		365B3B9023A0A4CE00611AB3 /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B3B8F23A0A4CE00611AB3 /* DrawingDocument.swift */; };
+		365B3B9223A0D61500611AB3 /* LayerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B3B9123A0D61500611AB3 /* LayerTableViewController.swift */; };
+		365B3B9423A0DE8F00611AB3 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B3B9323A0DE8F00611AB3 /* ColorPickerViewController.swift */; };
 		36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F869239CF0F200C4EB58 /* PainterViewController.swift */; };
 		36A8F86C239CF0F200C4EB58 /* PainterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */; };
 		36A8F86E239D2D4500C4EB58 /* DrawingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */; };
@@ -27,6 +30,9 @@
 		360BB8D0239AA15200BD4946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360BB8D3239AA15200BD4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		360BB8D5239AA15200BD4946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		365B3B8F23A0A4CE00611AB3 /* DrawingDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDocument.swift; sourceTree = "<group>"; };
+		365B3B9123A0D61500611AB3 /* LayerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTableViewController.swift; sourceTree = "<group>"; };
+		365B3B9323A0DE8F00611AB3 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		36A8F869239CF0F200C4EB58 /* PainterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterViewController.swift; sourceTree = "<group>"; };
 		36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PainterViewController.xib; sourceTree = "<group>"; };
 		36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModels.swift; sourceTree = "<group>"; };
@@ -72,6 +78,9 @@
 				360BB8C9239AA14E00BD4946 /* AppDelegate.swift */,
 				360BB8CB239AA14E00BD4946 /* ViewController.swift */,
 				36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */,
+				365B3B9123A0D61500611AB3 /* LayerTableViewController.swift */,
+				365B3B8F23A0A4CE00611AB3 /* DrawingDocument.swift */,
+				365B3B9323A0DE8F00611AB3 /* ColorPickerViewController.swift */,
 				36A8F869239CF0F200C4EB58 /* PainterViewController.swift */,
 				36A8F86F239D3B8400C4EB58 /* Extensions.swift */,
 				36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */,
@@ -216,10 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365B3B9223A0D61500611AB3 /* LayerTableViewController.swift in Sources */,
 				36A8F870239D3B8400C4EB58 /* Extensions.swift in Sources */,
 				360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */,
 				36A8F86E239D2D4500C4EB58 /* DrawingModels.swift in Sources */,
+				365B3B9023A0A4CE00611AB3 /* DrawingDocument.swift in Sources */,
 				360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */,
+				365B3B9423A0DE8F00611AB3 /* ColorPickerViewController.swift in Sources */,
 				36A8F86B239CF0F200C4EB58 /* PainterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				DEVELOPMENT_TEAM = 6YC9SF95UV;
 				INFOPLIST_FILE = Painter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				DEVELOPMENT_TEAM = 6YC9SF95UV;
 				INFOPLIST_FILE = Painter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
