@@ -24,6 +24,7 @@ class LayerTableViewController: UIViewController {
         self.view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
 }
@@ -57,6 +58,7 @@ extension LayerTableViewController: UITableViewDataSource {
             make.top.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.width.height.equalTo(100)
+            make.bottom.equalToSuperview().offset(-20)
         }
 
         return cell

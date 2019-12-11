@@ -147,6 +147,17 @@ extension CGPath {
 }
 
 extension CAShapeLayer {
+    func toImage() -> UIImage {
+
+        let renderer = UIGraphicsImageRenderer(size: UIScreen.main.bounds.size)
+
+        let image = renderer.image {
+            context in
+            return self.render(in: context.cgContext)
+        }
+
+        return image
+    }
 
     func encode() -> [String: Any] {
         var dict = [String: Any]()
@@ -199,9 +210,9 @@ extension CAShapeLayer {
                     }
                 }
 
-                if array.count > 0 {
-                    path.close()
-                }
+            }
+            if points.count > 0 {
+                path.close()
             }
             self.path = path.cgPath
         }
@@ -234,6 +245,10 @@ extension CAShapeLayer {
                 let color = UIColor(displayP3Red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
                 self.fillColor = color.cgColor
             }
+        }
+
+        if let lineWidth = dict["lineWidth"] as? CGFloat {
+            self.lineWidth = lineWidth
         }
     }
 }

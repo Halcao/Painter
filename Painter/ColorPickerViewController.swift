@@ -15,11 +15,11 @@ class ColorPickerViewController: DefaultColorPickerViewController {
         super.viewDidLoad()
 
         title = "选择颜色"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(close))
-
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(close))
     }
 
     @objc func close() {
+        self.delegate?.colorPicker(colorPicker, confirmedColor: selectedColor, usingControl: colorPicker.colorControls[0])
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 

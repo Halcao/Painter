@@ -52,6 +52,7 @@ class PainterViewController: UIViewController {
                 colorButtons[oldValue].isSelected = false
                 colorButtons[currentColor].isSelected = true
                 DrawingConfig.shared.selectedColor = currentColor
+                colorButtons[currentColor].setColor(color: DrawingConfig.shared.colors[currentColor])
             }
         }
     }
@@ -65,7 +66,6 @@ class PainterViewController: UIViewController {
             }
         }
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -245,25 +245,13 @@ class PainterViewController: UIViewController {
         alert.show()
     }
 
-    private func line() {
-
-    }
-
     private func colorPick(index: Int) {
-        let vc = DefaultColorPickerViewController()
+        let vc = ColorPickerViewController()
         vc.delegate = self
         vc.selectedColor = DrawingConfig.shared.colors[index]
         self.currentColor = index
         vc.modalPresentationStyle = .currentContext
         self.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
-//        let alert = UIAlertController(style: .actionSheet)
-//
-//        alert.addColorPicker(color: DrawingConfig.shared.colors[index]) { color in
-//            DrawingConfig.shared.colors[index] = color
-//            self.currentColor = index
-//        }
-//        alert.addAction(title: "完成", style: .cancel)
-//        alert.show()
     }
 }
 

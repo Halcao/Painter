@@ -16,7 +16,11 @@ enum DrawingMode {
 class DrawingConfig {
     static var shared = DrawingConfig()
 
-    var fillColor: UIColor = .white
+    var fillColor: UIColor {
+        get {
+            return colors[selectedColor]
+        }
+    }
     var strokeColor: UIColor {
         get {
             return colors[selectedColor]
@@ -28,7 +32,7 @@ class DrawingConfig {
         }
     }
     var colors: [UIColor] = [.black, .blue, .red]
-    var sizes: [CGFloat] = [1, 2, 3]
+    var sizes: [CGFloat] = [2, 3, 4]
     var selectedSize = 0
     var selectedColor = 0
 }
