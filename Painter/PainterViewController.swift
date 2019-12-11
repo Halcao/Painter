@@ -103,10 +103,6 @@ class PainterViewController: UIViewController {
             let singleTap = UITapGestureRecognizer(target: self, action: #selector(sizeTapped(tap:)))
             singleTap.numberOfTapsRequired = 1
             sizeButtons[i].addGestureRecognizer(singleTap)
-            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(sizeTapped(tap:)))
-            doubleTap.numberOfTapsRequired = 2
-            sizeButtons[i].addGestureRecognizer(doubleTap)
-            singleTap.require(toFail: doubleTap)
         }
     }
 
@@ -161,11 +157,7 @@ class PainterViewController: UIViewController {
     }
 
     @objc func sizeTapped(tap: UITapGestureRecognizer) {
-        if tap.numberOfTapsRequired == 1 {
-            currentSize = tap.view?.tag ?? 0
-        } else if tap.numberOfTapsRequired == 2 {
-
-        }
+        currentSize = tap.view?.tag ?? 0
     }
 
     @objc func registerUndo(layer: CAShapeLayer) {
@@ -229,7 +221,20 @@ class PainterViewController: UIViewController {
     }
 
     @IBAction func manage(_ sender: Any) {
+        let images = self.layers.map { $0.toImage() }
+        let vc = LayerTableViewController()
+        vc.images = images
+        vc.didDeleteRow = { row in
+            let layer = self.layers.remove(at: row)
+            if layer.superlayer != nil {
+                layer.removeFromSuperlayer()
+            }
 
+            // 防止出错
+            self.undoManager?.removeAllActions()
+            self.updateRedoButtons()
+        }
+        self.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
 
     @IBAction func switchMode(_ sender: Any) {
@@ -240,8 +245,49 @@ class PainterViewController: UIViewController {
         let triangle = UIAlertAction(title: "三角形", style: .default) { action in
             self.drawingMode = .triangle
         }
+
+        let inputLine = UIAlertAction(title: "线段（坐标）", style: .default) { action in
+            let v = LineInputView()
+            v.show(success: { points in
+                let path = UIBezierPath()
+                path.move(to: points[0])
+                path.addLine(to: points[1])
+                let layer = CAShapeLayer().styled()
+                layer.path = path.cgPath
+                self.view.layer.addSublayer(layer)
+                self.layers.append(layer)
+                self.undoManager?.registerUndo(withTarget: self, selector: #selector(self.registerUndo(layer:)), object: layer)
+                self.updateRedoButtons()
+                self.startPoint = nil
+                self.currentLayer = nil
+                SwiftMessages.hideAll()
+            })
+        }
+
+        let input3 = UIAlertAction(title: "三角形（坐标）", style: .default) { action in
+            let v = TriangleInputView()
+            v.show(success: { points in
+                let path = UIBezierPath()
+                path.move(to: points[0])
+                path.addLine(to: points[1])
+                path.addLine(to: points[2])
+                path.close()
+                let layer = CAShapeLayer().styled()
+                layer.path = path.cgPath
+                self.view.layer.addSublayer(layer)
+                self.layers.append(layer)
+                self.undoManager?.registerUndo(withTarget: self, selector: #selector(self.registerUndo(layer:)), object: layer)
+                self.updateRedoButtons()
+                self.startPoint = nil
+                self.currentLayer = nil
+                SwiftMessages.hideAll()
+            })
+        }
+
         alert.addAction(line)
         alert.addAction(triangle)
+        alert.addAction(inputLine)
+        alert.addAction(input3)
         alert.show()
     }
 

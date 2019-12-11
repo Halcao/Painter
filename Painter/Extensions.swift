@@ -287,22 +287,7 @@ extension SwiftMessages {
                 config.presentationContext = .automatic
             }
         }
-        //        else if let top = UIViewController.current {
-        //            config.presentationContext = .view(top.view)
-        //        }
 
-        SwiftMessages.show(config: config, view: view)
-    }
-
-    static func showNotification(title: String, message: String, handler: ((UIButton) -> Void)? = nil) {
-        let view = MessageView.viewFromNib(layout: .cardView)
-        view.configureContent(title: title, body: message, iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "我造了", buttonTapHandler: handler)
-        //        view.configureTheme(.warning)
-        view.configureTheme(backgroundColor: UIColor(red: 0.90, green: 0.30, blue: 0.26, alpha: 1.00), foregroundColor: .white)
-        var config = SwiftMessages.Config()
-        config.duration = .forever
-        config.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
-        config.dimMode = .gray(interactive: true)
         SwiftMessages.show(config: config, view: view)
     }
 
@@ -362,4 +347,21 @@ extension UIViewController {
     }
 
 
+}
+
+
+extension CGPoint {
+    func distance(from other: CGPoint) -> CGFloat {
+        return sqrt(x*other.x+y*other.y)
+    }
+}
+
+func verfiyTriangle(points: [CGPoint]) -> Bool {
+    return points[0].x * (points[1].y - points[2].y) + points[1].x * (points[2].y - points[0].y) + points[2].x * (points[0].y - points[1].y) != 0
+}
+
+func verifyScreen(points: [CGPoint]) -> Bool {
+    return points.allSatisfy { point -> Bool in
+        return UIScreen.main.bounds.contains(point)
+    }
 }

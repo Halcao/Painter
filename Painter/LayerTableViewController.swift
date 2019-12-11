@@ -11,26 +11,59 @@ import SnapKit
 
 class LayerTableViewController: UIViewController {
     private var tableView = UITableView(frame: .zero, style: .plain)
-    var layers: [UIImage] = []
+    var images: [UIImage] = []
+    var didDeleteRow: ((Int)->Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
     }
-    
 
     private func setup() {
+        self.view.backgroundColor = .white
         self.view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.topMargin)
+            make.bottom.equalTo(view.snp.bottomMargin)
+            make.left.right.equalToSuperview()
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
+        title = "管理图形"
+
+        let done = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(close))
+        let edit = UIBarButtonItem(title: "编辑", style: .plain, target: self, action: #selector(editRow))
+        self.navigationItem.leftBarButtonItem = edit
+        self.navigationItem.rightBarButtonItem = done
     }
 
+    @objc func close() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+    @objc func editRow() {
+        self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+    }
 }
 
 extension LayerTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.images.remove(at: indexPath.row)
+        didDeleteRow?(indexPath.row)
+        tableView.reloadData()
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 
 extension LayerTableViewController: UITableViewDataSource {
@@ -39,12 +72,13 @@ extension LayerTableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return layers.count
+        return images.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "layer-\(indexPath)")
         let titleLabel = UILabel()
+        titleLabel.text = "图形 - \(indexPath.row)"
         cell.contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
@@ -52,7 +86,9 @@ extension LayerTableViewController: UITableViewDataSource {
             make.width.equalTo(100)
         }
 
-        let imageView = UIImageView(image: layers[indexPath.row])
+        let imageView = UIImageView(image: images[indexPath.row])
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = images[indexPath.row]
         cell.contentView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
