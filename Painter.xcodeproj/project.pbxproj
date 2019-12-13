@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360BB8C9239AA14E00BD4946 /* AppDelegate.swift */; };
-		360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360BB8CB239AA14E00BD4946 /* ViewController.swift */; };
 		360BB8CF239AA14E00BD4946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8CD239AA14E00BD4946 /* Main.storyboard */; };
 		360BB8D1239AA15200BD4946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D0239AA15200BD4946 /* Assets.xcassets */; };
 		360BB8D4239AA15200BD4946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		360BB8C6239AA14E00BD4946 /* Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		360BB8C9239AA14E00BD4946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		360BB8CB239AA14E00BD4946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		360BB8CE239AA14E00BD4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		360BB8D0239AA15200BD4946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360BB8D3239AA15200BD4946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,22 +75,53 @@
 		360BB8C8239AA14E00BD4946 /* Painter */ = {
 			isa = PBXGroup;
 			children = (
-				360BB8C9239AA14E00BD4946 /* AppDelegate.swift */,
-				360BB8CB239AA14E00BD4946 /* ViewController.swift */,
-				36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */,
-				365B3B9123A0D61500611AB3 /* LayerTableViewController.swift */,
-				365B3B9323A0DE8F00611AB3 /* ColorPickerViewController.swift */,
-				36A8F869239CF0F200C4EB58 /* PainterViewController.swift */,
-				36A8F86F239D3B8400C4EB58 /* Extensions.swift */,
-				365B3B9523A11BF200611AB3 /* TriangleInputView.swift */,
-				365B3B9723A1291E00611AB3 /* LineInputView.swift */,
-				36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */,
-				360BB8CD239AA14E00BD4946 /* Main.storyboard */,
+				36D690ED23A3E0C700DB81BE /* Common */,
+				36D690EC23A3E0B000DB81BE /* View */,
+				36D690EB23A3E0AB00DB81BE /* Model */,
+				36D690EA23A3E0A000DB81BE /* ViewController */,
 				360BB8D0239AA15200BD4946 /* Assets.xcassets */,
-				360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */,
 				360BB8D5239AA15200BD4946 /* Info.plist */,
 			);
 			path = Painter;
+			sourceTree = "<group>";
+		};
+		36D690EA23A3E0A000DB81BE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				365B3B9123A0D61500611AB3 /* LayerTableViewController.swift */,
+				365B3B9323A0DE8F00611AB3 /* ColorPickerViewController.swift */,
+				36A8F869239CF0F200C4EB58 /* PainterViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		36D690EB23A3E0AB00DB81BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36A8F86D239D2D4500C4EB58 /* DrawingModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36D690EC23A3E0B000DB81BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				365B3B9523A11BF200611AB3 /* TriangleInputView.swift */,
+				365B3B9723A1291E00611AB3 /* LineInputView.swift */,
+				360BB8CD239AA14E00BD4946 /* Main.storyboard */,
+				36A8F86A239CF0F200C4EB58 /* PainterViewController.xib */,
+				360BB8D2239AA15200BD4946 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36D690ED23A3E0C700DB81BE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				360BB8C9239AA14E00BD4946 /* AppDelegate.swift */,
+				36A8F86F239D3B8400C4EB58 /* Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		6BDC4FBCBB73374F2A763F95 /* Frameworks */ = {
@@ -230,7 +259,6 @@
 			files = (
 				365B3B9223A0D61500611AB3 /* LayerTableViewController.swift in Sources */,
 				36A8F870239D3B8400C4EB58 /* Extensions.swift in Sources */,
-				360BB8CC239AA14E00BD4946 /* ViewController.swift in Sources */,
 				365B3B9623A11BF200611AB3 /* TriangleInputView.swift in Sources */,
 				36A8F86E239D2D4500C4EB58 /* DrawingModels.swift in Sources */,
 				360BB8CA239AA14E00BD4946 /* AppDelegate.swift in Sources */,
