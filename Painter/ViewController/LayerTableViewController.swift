@@ -62,7 +62,6 @@ extension LayerTableViewController: UITableViewDelegate {
         self.images.remove(at: indexPath.row)
         didDeleteRow?(indexPath.row)
         tableView.reloadData()
-//        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 

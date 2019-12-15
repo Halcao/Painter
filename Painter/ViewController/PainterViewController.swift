@@ -185,6 +185,10 @@ class PainterViewController: UIViewController {
     }
 
     @IBAction func undo(_ sender: Any) {
+        startPoint = nil
+        firstPath = nil
+        self.currentLayer?.removeFromSuperlayer()
+
         if undoManager?.canUndo ?? false {
             undoManager?.undo()
         }
@@ -192,6 +196,10 @@ class PainterViewController: UIViewController {
     }
 
     @IBAction func redo(_ sender: Any) {
+        startPoint = nil
+        firstPath = nil
+        self.currentLayer?.removeFromSuperlayer()
+
         if undoManager?.canRedo ?? false {
             undoManager?.redo()
         }

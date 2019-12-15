@@ -16,6 +16,8 @@ enum DrawingMode {
 class DrawingConfig {
     static var shared = DrawingConfig()
 
+    private init() {}
+
     var fillColor: UIColor {
         get {
             return colors[selectedColor]
