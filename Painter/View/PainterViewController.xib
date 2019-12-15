@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UK3-1R-NMe" userLabel="tool">
-                    <rect key="frame" x="20" y="129" width="30" height="220"/>
+                    <rect key="frame" x="20" y="129" width="30" height="182"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm8-q8-RSl">
                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -64,24 +63,18 @@
                                 <action selector="manage:" destination="-1" eventType="touchUpInside" id="wA1-uH-drR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psc-As-7tr">
-                            <rect key="frame" x="0.0" y="152" width="30" height="30"/>
-                            <state key="normal" title="add" image="icon_add"/>
-                            <connections>
-                                <action selector="switchMode:" destination="-1" eventType="touchUpInside" id="l1n-ih-N0U"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-0C-Twy">
-                            <rect key="frame" x="0.0" y="190" width="30" height="30"/>
+                            <rect key="frame" x="0.0" y="152" width="30" height="30"/>
                             <state key="normal" title="status" image="line"/>
+                            <connections>
+                                <action selector="switchMode:" destination="-1" eventType="touchUpInside" id="0eJ-pI-mGg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="AZh-mZ-1TB" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="7aA-sq-aBN"/>
                         <constraint firstItem="7Nq-89-e14" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="EhX-Mk-IcB"/>
-                        <constraint firstItem="psc-As-7tr" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="Et0-1m-FV2"/>
                         <constraint firstItem="AZh-mZ-1TB" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="HeR-TB-puh"/>
-                        <constraint firstItem="psc-As-7tr" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="SK0-ks-HIB"/>
                         <constraint firstItem="7Nq-89-e14" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="YTE-m3-jFh"/>
                         <constraint firstItem="G0P-0C-Twy" firstAttribute="height" secondItem="vm8-q8-RSl" secondAttribute="height" id="eYQ-xu-jTB"/>
                         <constraint firstItem="CFn-dp-HiO" firstAttribute="width" secondItem="vm8-q8-RSl" secondAttribute="width" id="h4Y-aT-LMQ"/>
@@ -202,7 +195,6 @@
         <image name="bi_gai" width="90" height="160"/>
         <image name="bi_jian" width="90" height="180"/>
         <image name="file-manager" width="100" height="100"/>
-        <image name="icon_add" width="100" height="100"/>
         <image name="icon_daxiao1" width="80" height="80"/>
         <image name="icon_daxiao1_xuan" width="80" height="80"/>
         <image name="icon_daxiao2" width="80" height="80"/>

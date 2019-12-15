@@ -78,7 +78,7 @@ class PainterViewController: UIViewController {
 
         statusButton.addDashedBorder()
         statusButton.transform = CGAffineTransform(scaleX: 26.0/30, y: 26.0/30)
-        statusButton.isUserInteractionEnabled = false
+//        statusButton.isUserInteractionEnabled = false
         self.drawingMode = .line
 
         sizeButtons = [size1Button, size2Button, size3Button]
