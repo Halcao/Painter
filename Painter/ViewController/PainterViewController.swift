@@ -268,7 +268,7 @@ class PainterViewController: UIViewController {
                 self.updateRedoButtons()
                 self.startPoint = nil
                 self.currentLayer = nil
-                SwiftMessages.hideAll()
+                SwiftMessages.otherMessages.hideAll()
             })
         }
 
@@ -288,7 +288,7 @@ class PainterViewController: UIViewController {
                 self.updateRedoButtons()
                 self.startPoint = nil
                 self.currentLayer = nil
-                SwiftMessages.hideAll()
+                SwiftMessages.otherMessages.hideAll()
             })
         }
 

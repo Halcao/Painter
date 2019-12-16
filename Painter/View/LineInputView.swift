@@ -141,6 +141,6 @@ extension LineInputView {
         config.duration = .forever
         config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
         config.presentationContext  = .window(windowLevel: UIWindow.Level.normal)
-        SwiftMessages.show(config: config, view: self)
+        SwiftMessages.otherMessages.show(config: config, view: self)
     }
 }
